@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "367201123946",
+    "project_id": "fbone-40a63",
+    "storage_bucket": "fbone-40a63.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:367201123946:android:3d6bf1c2235c2028cbd413",
+        "android_client_info": {
+          "package_name": "com.fbone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgncpO4fV2zA6rotNC28DvWautyMFwQOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

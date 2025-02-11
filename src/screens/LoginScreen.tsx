@@ -8,23 +8,24 @@ import {
 } from 'react-native';
 import React, {useState} from 'react';
 //   import {colors} from '../utils/Colors';
-//   import auth from '@react-native-firebase/auth';
+  import auth from '@react-native-firebase/auth';
 
 const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // const onRegister = () => {
-  //   auth()
-  //     .signInWithEmailAndPassword(email, password)
-  //     .then(response => {
-  //       console.log('response : ', response);
-  //       Alert.alert("Logged In Successfully!");
-  //     })
-  //     .catch(error => {
-  //         Alert.alert('error : ',error );
-  //     });
-  // };
+  const onLogin = () => {
+    auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(response => {
+        console.log('response : ', response);
+        Alert.alert("Logged In Successfully!");
+        navigation.navigate("HomeScreen");
+      })
+      .catch(error => {
+          Alert.alert('error : ',error );
+      });
+  };
 
   const notAUser = () => {
     navigation.navigate("SignUpScreen");
@@ -52,7 +53,7 @@ const LoginScreen = ({navigation}) => {
         </View>
         <TouchableOpacity
           style={styles.toubleableRegTxtContainer}
-          // onPress={onRegister}
+           onPress={onLogin}
         >
           <Text style={styles.loginTxtButton}>Login</Text>
         </TouchableOpacity>

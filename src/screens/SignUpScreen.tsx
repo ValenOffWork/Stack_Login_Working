@@ -4,10 +4,11 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 import React, {useState} from 'react';
 // import {colors} from '../utils/Colors';
-//   import auth from '@react-native-firebase/auth';
+   import auth from '@react-native-firebase/auth';
 
 const SignUpScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -17,23 +18,23 @@ const SignUpScreen = ({navigation}) => {
     navigation.navigate('LoginScreen');
   };
 
-  // const onRegister = () => {
-  //   auth()
-  //     .createUserWithEmailAndPassword(email, password)
-  //     .then(() => {
-  //       Alert.alert('User Created Successfully!');
-  //       navigation.navigate('LoginScreen');
-  //     })
-  //     .catch(error => {
-  //       if (error.code === 'auth/email-already-in-use') {
-  //         Alert.alert('That email address is already in use!');
-  //       }
-  //       if (error.code === 'auth/invalid-email') {
-  //         Alert.alert('That email address is invalid!');
-  //       }
-  //       Alert.alert(error);
-  //     });
-  // };
+  const onRegister = () => {
+    auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        Alert.alert('User Created Successfully!');
+        navigation.navigate('LoginScreen');
+      })
+      .catch(error => {
+        if (error.code === 'auth/email-already-in-use') {
+          Alert.alert('That email address is already in use!');
+        }
+        if (error.code === 'auth/invalid-email') {
+          Alert.alert('That email address is invalid!');
+        }
+        Alert.alert(error);
+      });
+  };
   return (
     <View style={styles.containerMain}>
       <Text style={styles.signUpTxt}>SignUp Screen</Text>
@@ -57,7 +58,7 @@ const SignUpScreen = ({navigation}) => {
         </View>
         <TouchableOpacity
           style={styles.toubleableRegTxtContainer}
-          // onPress={onRegister}
+           onPress={onRegister}
         >
           <Text style={styles.regTxtButton}>Register</Text>
         </TouchableOpacity>
