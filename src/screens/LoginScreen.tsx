@@ -13,6 +13,8 @@ import React, {useState} from 'react';
 import auth from '@react-native-firebase/auth';
 import {ScrollView} from 'react-native-gesture-handler';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import GoogleLogin from './GoogleLogin';
+import PhoneLogin from './PhoneLogin';
 
 const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -32,7 +34,6 @@ const LoginScreen = ({navigation}) => {
         }
         if(error.code === 'auth/invalid-credential'){
           Alert.alert('Please check your credential!');
-
         }
         // Alert.alert('error : ', error.message);
       });
@@ -98,20 +99,18 @@ const LoginScreen = ({navigation}) => {
             <View style={styles.viewPhoneGoogleContainer}>
               <TouchableOpacity>
                 <View style={styles.viewPhone}>
-                  <Image
-                    style={{width: 40, height: 40}}
-                    source={require('../assets/phone.png')}
-                  />
+              <PhoneLogin/>
                 </View>
               </TouchableOpacity>
-              <TouchableOpacity>
-                <View style={styles.viewGoogle}>
-                  <Image
+              {/* <TouchableOpacity> */}
+                {/* <View style={styles.viewGoogle}> */}
+                  {/* <Image
                     style={{width: 40, height: 40}}
                     source={require('../assets/google.png')}
-                  />
-                </View>
-              </TouchableOpacity>
+                  /> */}
+                  <GoogleLogin/>
+                {/* </View> */}
+              {/* </TouchableOpacity> */}
             </View>
           </View>
           <View style={styles.createUserTouable}>

@@ -1,6 +1,5 @@
 import {
   View,
-  Text,
   BackHandler,
   Alert,
   Image,
@@ -10,8 +9,9 @@ import {
 import React from 'react';
 import {useEffect} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {ScrollView} from 'react-native-gesture-handler';
+import {ScrollView, Text} from 'react-native-gesture-handler';
 import auth from '@react-native-firebase/auth';
+
 
 const HomeScreen = ({navigation}) => {
   useEffect(() => {
@@ -24,7 +24,7 @@ const HomeScreen = ({navigation}) => {
     };
     BackHandler.addEventListener('hardwareBackPress', onBackPress);
     return () => {
-      // BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+      //  BackHandler.removeEventListener('hardwareBackPress', onBackPress);
     };
   }, []);
 
@@ -33,11 +33,11 @@ const HomeScreen = ({navigation}) => {
       .signOut()
       .then(() => {
         navigation.popToTop();
-      }).catch(()=>{
+      })
+      .catch(() => {
         Alert.alert('Not able to logout');
       });
   };
-
   return (
     <SafeAreaView style={{flex: 1}}>
       <ScrollView contentContainerStyle={{flexGrow: 1}}>
@@ -48,7 +48,15 @@ const HomeScreen = ({navigation}) => {
             <View style={styles.viewImage}>
               <Image
                 style={styles.backImage}
-                source={require('../assets/logout.png')}
+                source={require('../assets/logout.png')}/>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('AddUsersScreen')}>
+            <View style={styles.viewImage}>
+              <Image
+                style={styles.backImage}
+                source={require('../assets/add.png')}
               />
             </View>
           </TouchableOpacity>

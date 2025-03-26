@@ -78,7 +78,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 15,
     color: 'black',
-   
   },
 });
 export default FirstScreen;

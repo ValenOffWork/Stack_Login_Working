@@ -36,7 +36,6 @@ export default App;
 
 
 /*
-
 This useEffect runs only once ([] as dependency array) when the app starts.
 auth().onAuthStateChanged:
 Listens for authentication changes (e.g., user logs in or out).
@@ -44,5 +43,4 @@ If logged in, it updates user with user details.
 If logged out, it sets user to null.
 Once done, it sets loading to false, so the app can proceed.
 return subscriber;: Ensures the listener unsubscribes when the component unmounts to prevent memory leaks.
-
 */

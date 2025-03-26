@@ -12,7 +12,20 @@
           "package_name": "com.fbone"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "367201123946-9gjtfo08h8fp73jgfe5d16v7aebjgmgb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fbone",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "367201123946-cadu9n0fu6h3ist8rptgd4ov1q0bh2ta.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCgncpO4fV2zA6rotNC28DvWautyMFwQOQ"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "367201123946-cadu9n0fu6h3ist8rptgd4ov1q0bh2ta.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
