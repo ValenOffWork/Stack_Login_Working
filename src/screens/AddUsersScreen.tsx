@@ -88,7 +88,6 @@ const AddUsersScreen = () => {
   return (
     <View style={styles.container}>
       <Text >Realtime Database Firebase</Text>
-      
       <View style={styles.nestedContainer}>
         <TextInput style={styles.textInput} placeholder="Enter Name" onChangeText={setName} />
         <TextInput style={styles.textInput} placeholder="Enter Email" onChangeText={setEmail} />
