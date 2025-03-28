@@ -5,6 +5,7 @@ import SignUpScreen from '../screens/SignUpScreen';
 import HomeScreen from '../screens/HomeScreen';
 import FirstScreen from '../screens/FirstScreen';
 import AddUsersScreen from '../screens/AddUsersScreen';
+import ApiCallsScreen from '../screens/ApiCallsScreen';
 // import fireStoreDemo from '../screens/fireStoreDemo';
 
 const Stack = createStackNavigator();
@@ -23,6 +24,7 @@ const StackNavigator: React.FC<StackNavigatorProps> = ({user}) => {
         <>
           <Stack.Screen name="HomeScreen" component={HomeScreen} />
           <Stack.Screen name="AddUsersScreen" component={AddUsersScreen}/>
+          <Stack.Screen name="ApiCallsScreen" component={ApiCallsScreen}/>
           {/* <Stack.Screen name="fireStoreDemo" component={fireStoreDemo} /> */}
         </>
       ) : (

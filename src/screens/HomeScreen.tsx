@@ -42,6 +42,7 @@ const HomeScreen = ({navigation}) => {
     <SafeAreaView style={{flex: 1}}>
       <ScrollView contentContainerStyle={{flexGrow: 1}}>
         <View style={styles.containerMain}>
+           <Text>Home Screen</Text>
           <TouchableOpacity
             onPress={() => logOut()}
             style={styles.touchableBack}>
@@ -60,6 +61,17 @@ const HomeScreen = ({navigation}) => {
               />
             </View>
           </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => navigation.navigate('ApiCallsScreen')}>
+            <View style={styles.viewImage}>
+              <Image
+                style={styles.backImage}
+                source={require('../assets/add.png')}
+              />
+            </View>
+          </TouchableOpacity>
+        
         </View>
       </ScrollView>
     </SafeAreaView>
